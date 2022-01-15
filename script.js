@@ -1,4 +1,4 @@
-console.log("Welcome to Spotify");
+console.log("Welcome to Apna Spotify");
 let songIndex = 0;
 let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
@@ -38,7 +38,6 @@ masterPlay.addEventListener('click', () => {
     }
 })
 audioElement.addEventListener('timeupdate', () => {
-
     progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
     myProgressBar.value = progress;
 }
@@ -54,7 +53,6 @@ const makeAllPlays = () => {
 }
 Array.from(document.querySelector('.songItemPlay')).forEach((element) => {
     element.addEventListener('click', (e) => {
-
         makeAllPlays();
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-play-circle');
@@ -66,9 +64,7 @@ Array.from(document.querySelector('.songItemPlay')).forEach((element) => {
         gif.style.opacity = 1;
         masterPlay.classList.remove('fa-play-circle');
         masterPlay.classList.add('fa-pause-circle');
-
     })
-
 })
 document.getElementById('next').addEventListener('click', () => {
     if (songIndex >= 9)
